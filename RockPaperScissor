@@ -1,0 +1,16 @@
+import java.util.Random;
+
+public class RockPaperScissors {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int number = random.nextInt(3);
+
+        if (number == 0) {
+            System.out.println("Rock");
+        } else if (number == 1) {
+            System.out.println("Paper");
+        } else {
+            System.out.println("Scissors");
+        }
+    }
+}
