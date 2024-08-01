@@ -1,0 +1,19 @@
+package randomsequence;
+import java.util.Random;
+public class Randomsequence {
+
+	public static void main(String[] args) {
+		
+		
+		        long seed = 123456L;
+		        Random random = new Random(seed);
+
+		        for (int i = 0; i < 10; i++) {
+		            System.out.println(random.nextInt(100));
+		        }
+		   
+
+
+	}
+
+}
