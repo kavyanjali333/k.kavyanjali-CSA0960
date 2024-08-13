@@ -1,0 +1,30 @@
+package practice9;
+
+public class centralLocationFinder{
+
+	    public static double[] findCentroid(double[][] locations) {
+	        double sumX = 0;
+	        double sumY = 0;
+	        int numberOfLocations = locations.length;
+	        for (double[] location : locations) {
+	            sumX += location[0];
+	            sumY += location[1];
+	        }
+	        double centroidX = sumX / numberOfLocations;
+	        double centroidY = sumY / numberOfLocations;
+
+	        return new double[]{centroidX, centroidY};
+	    }
+	    
+	    public static void main(String[] args) {
+	        double[][] dormLocations = {
+	            {1, 3},
+	            {2, 5},
+	            {3, 7},
+	            {4, 2},
+	            {5, 8}
+	        };
+	        double[] centralLocation = findCentroid(dormLocations);
+	        System.out.println("Central Location: (" + centralLocation[0] + ", " + centralLocation[1] + ")");
+	    }
+	}
