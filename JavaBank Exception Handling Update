@@ -1,0 +1,8 @@
+
+
+try {
+    // Your code here
+} catch (Exception e) {
+    MyException newExc = new MyException("An unhandled error occurred!!");
+    throw newExc;
+}
