@@ -1,0 +1,34 @@
+import javax.swing.JOptionPane;
+
+public class TransactionManager {
+
+    public void performTransaction() {
+        try {
+            // Call to transaction operation
+            executeTransaction();
+        } catch (CustomException e) {
+            JOptionPane.showMessageDialog(null, "Transaction Error: " + e.getMessage());
+        }
+
+        try {
+            // Call to create operation
+            createOperation();
+        } catch (CustomException e) {
+            JOptionPane.showMessageDialog(null, "Creation Error: " + e.getMessage());
+        }
+    }
+
+    private void executeTransaction() throws CustomException {
+        // Transaction logic here
+    }
+
+    private void createOperation() throws CustomException {
+        // Creation logic here
+    }
+}
+
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
