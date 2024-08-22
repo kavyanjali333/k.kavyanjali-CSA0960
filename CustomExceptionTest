@@ -1,0 +1,32 @@
+public class CustomExceptionTest {
+    public static void main(String[] args) {
+        try {
+            createAccount(null); // Incorrect data
+            makeTransaction(-100); // Incorrect data
+        } catch (CustomException e) {
+            System.out.println("Custom Exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+
+    public static void createAccount(String accountName) throws CustomException {
+        if (accountName == null) {
+            throw new CustomException("Account name cannot be null.");
+        }
+        // Account creation logic
+    }
+
+    public static void makeTransaction(int amount) throws CustomException {
+        if (amount < 0) {
+            throw new CustomException("Transaction amount cannot be negative.");
+        }
+        // Transaction logic
+    }
+}
+
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
