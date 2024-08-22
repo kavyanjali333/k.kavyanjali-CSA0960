@@ -1,0 +1,14 @@
+# Exception Handling for Make Transaction Button in JavaBank Application
+
+try {
+    // Code to initiate transaction
+    makeTransaction();
+} catch (InsufficientFundsException e) {
+    System.out.println("Transaction failed: Insufficient funds.");
+} catch (AccountNotFoundException e) {
+    System.out.println("Transaction failed: Account not found.");
+} catch (TransactionLimitExceededException e) {
+    System.out.println("Transaction failed: Limit exceeded.");
+} catch (Exception e) {
+    System.out.println("An unexpected error occurred: " + e.getMessage());
+}
